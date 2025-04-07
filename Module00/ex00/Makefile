@@ -20,6 +20,6 @@ run : re
 	./$(NAME) $(ARGS)
 
 push : fclean
-	git add .
+	git add ../../.
 	git commit -m "$(ARGS)"
 	git push class
