@@ -22,4 +22,4 @@ run : re
 push : fclean
 	git add .
 	git commit -m "$(ARGS)"
-	git push
+	git push class
