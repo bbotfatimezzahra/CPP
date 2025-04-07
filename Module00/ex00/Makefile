@@ -1,4 +1,4 @@
-NAME := megaphone
+NAME := Megaphone
 CC := c++
 CPPFLAGS := -Wall -Wextra -Werror -std=c++98
 SRCS := $(wildcard *.cpp)

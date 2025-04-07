@@ -1,20 +1,25 @@
 NAME := megaphone
 CC := c++
-CFLAGS := -Wall -Wextra -Werror -std=c++98
-SRCS := megaphone.cpp
-OBJS := $(SRCS:%.c=%.o)
+CPPFLAGS := -Wall -Wextra -Werror -std=c++98
+SRCS := $(wildcard *.cpp)
+HEADS := $(wildcard *.hpp)
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re run push
 
 all : $(NAME)
 
-$(NAME) : $(SRCS)
-	$(CC) -o $(NAME) $(SRCS)
+$(NAME) : $(SRCS) $(HEADS)
+	$(CC) $(CPPFLAGS) $(SRCS) -o $(NAME)
 
 clean :
-	rm -rf $(OBJS)
-
-fclean : clean
 	rm -rf $(NAME)
 
-re : fclean all
+re : clean all
+
+run : re
+	./$(NAME) $(ARGS)
+
+push : clean
+	git add ../../.
+	git commit -m "$(ARGS)"
+	git push class
