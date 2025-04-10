@@ -1,22 +1,17 @@
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
-
+#pragma once
 # include <iostream>
 
 class Contact
 {
 	private :
-		std::String	first_name;
-		std::String	last_name;
-		std::String	nickname;
-		std::String	phone_number;
-		std::String	darkest_secret;
+		std::string	first_name;
+		std::string	last_name;
+		std::string	nickname;
+		std::string	phone_number;
+		std::string	darkest_secret;
 
 	public :
-		Contact(void);
-		Contact(std::String first,std::String last,std::String nick,std::String phone,std::String secret); 
-		~Contact(void);
+		void	fill(void);
 		void	display(void);
+		void	display(int index);
 };
-
-#endif
