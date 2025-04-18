@@ -1,13 +1,18 @@
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 int	Account::_totalAmount = 0;
 
-void	_displayTimestamp( void )
+void	Account::_displayTimestamp(void)
 {
+	char	str[19];
+	std::time_t	t = std::time(NULL);
+	if (std::strftime(str, sizeof(str), "[%Y%m%d_%H%M%S] ", std::localtime(&t)))
+		std::cout << str;
 }
 
 Account::Account(int initial_deposit)
@@ -17,6 +22,7 @@ Account::Account(int initial_deposit)
 	Account::_totalAmount += initial_deposit;
 	this->_nbDeposits = 0;
 	this->_nbWithdrawals = 0;
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "created" << std::endl;
@@ -44,6 +50,7 @@ int	Account::getTotalAmount(void)
 
 void	Account::displayAccountsInfos(void)
 {
+	Account::_displayTimestamp();
 	std::cout << "accounts:";
 	std::cout << Account::getNbAccounts();
 	std::cout << ";total:";
@@ -57,6 +64,7 @@ void	Account::displayAccountsInfos(void)
 
 void	Account::displayStatus(void) const
 {
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << this->_amount << ";";	
 	std::cout << "deposits:" << this->_nbDeposits << ";";
@@ -65,6 +73,7 @@ void	Account::displayStatus(void) const
 
 void	Account::makeDeposit(int deposit)
 {
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "p_amount:" << this->_amount << ";";	
 	std::cout << "deposit:" << deposit << ";";
@@ -77,6 +86,7 @@ void	Account::makeDeposit(int deposit)
 
 bool	Account::makeWithdrawal(int withd)
 {
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "p_amount:" << this->_amount << ";";	
 	std::cout << "withdrawal:";
@@ -96,6 +106,7 @@ bool	Account::makeWithdrawal(int withd)
 
 Account::~Account(void)
 {
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "closed" << std::endl;
