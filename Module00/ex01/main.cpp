@@ -1,5 +1,6 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include <iostream>
 
 int	main()
 {
@@ -13,7 +14,8 @@ int	main()
 		std::cout << "ADD : to add a new contact\n";
 		std::cout << "SEARCH : to find a contact\n";
 		std::cout << "EXIT : to quit the program" << std::endl;
-		std::getline(std::cin >> std::ws, cmd);
+		std::cin >> cmd;
+		std::cin.ignore();
 		if (!cmd.compare("ADD"))
 			book.add();
 		else if (!cmd.compare("SEARCH"))

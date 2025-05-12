@@ -1,0 +1,37 @@
+|0|--------------------------
+|V| Namespaces
+|V| Classes
+|V| Member functions
+|V| Stdio streams
+|V| Initialization lists
+|V| Static
+|V| Const
+|1| ------------------------
+| | Memory allocation
+| | Pointers to members
+| | References
+| | Switch statement
+|2| -------------------------
+| | Ad-hoc polymorphism
+| | Operator overloading
+| | Orthodox canonical class form
+|3| -------------------------
+| | Inheritance
+|4| -------------------------
+| | Subtype polymorphism
+| | Abstract classes
+| | Interfaces
+|5| -------------------------
+| | Repetition
+| | Exceptions
+|6| -------------------------
+| | Casts
+|7| -------------------------
+| | Templates
+|8| -------------------------
+| | Templated containers
+| | Iterators
+| | Algorithms
+|9| -------------------------
+| | STL
+-----------------------------
