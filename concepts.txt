@@ -7,10 +7,11 @@
 |V| Static
 |V| Const
 |1| ------------------------
-| | Memory allocation
-| | Pointers to members
-| | References
-| | Switch statement
+|V| Memory allocation
+|V| Pointers to members
+|V| References
+|V| Switch statement
+|V| File streams
 |2| -------------------------
 | | Ad-hoc polymorphism
 | | Operator overloading
