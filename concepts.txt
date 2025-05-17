@@ -8,14 +8,14 @@
 |V| Const
 |1| ------------------------
 |V| Memory allocation
-|V| Pointers to members
+|V| Pointers to member functions
 |V| References
 |V| Switch statement
 |V| File streams
 |2| -------------------------
-| | Ad-hoc polymorphism
-| | Operator overloading
-| | Orthodox canonical class form
+|V| Ad-hoc polymorphism
+|V| Operator overloading
+|V| Orthodox canonical class form
 |3| -------------------------
 | | Inheritance
 |4| -------------------------
