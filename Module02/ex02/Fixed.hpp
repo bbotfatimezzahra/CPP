@@ -10,7 +10,7 @@ class Fixed
 		static const int	_fractionBits;
 	public :
 		Fixed();
-		Fixed(const Fixed &og);
+		Fixed(const Fixed &copy);
 		Fixed(const int &val);
 		Fixed(const float &val);
 		~Fixed();

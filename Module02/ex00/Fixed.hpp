@@ -9,9 +9,9 @@ class Fixed
 		static const int	_fractionbits;
 	public :
 		Fixed();
-		Fixed(Fixed const &og);
+		Fixed(Fixed const &other);
 		~Fixed();
-		Fixed & operator=(Fixed const &og);
+		Fixed & operator=(Fixed const &other);
 		int	getRawBits(void) const;
 		void	setRawBits(int const raw);
 };
