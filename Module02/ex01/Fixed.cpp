@@ -18,13 +18,13 @@ Fixed::Fixed(Fixed const &og)
 Fixed::Fixed(int const &value)
 {
 	std::cout << "Int constructor called" << std::endl;
-	_rawbits = (value * (1 << Fixed::_fractionbits));
+	_rawbits = (value * (1 << _fractionbits));
 }
 
 Fixed::Fixed(float const &value)
 {
 	std::cout << "Float constructor called" << std::endl;
-	_rawbits = roundf(value * (1 << Fixed::_fractionbits));
+	_rawbits = roundf(value * (1 << _fractionbits));
 }
 
 Fixed::~Fixed()
