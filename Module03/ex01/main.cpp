@@ -4,7 +4,7 @@
 int	main()
 {
 	ScavTrap	temp("Daniel");
-	ScavTrap	Daniel("No name");
+	ScavTrap	Daniel(temp);
 
 	/* Assignment check */
 	temp.setAttackDamage(55);

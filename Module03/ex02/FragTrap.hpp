@@ -1,16 +1,15 @@
 #pragma once
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class FragTrap : public ClapTrap
 {
 	public :
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap &copy);
-		~ScavTrap();
-		ScavTrap & operator=(const ScavTrap &rhs);
+		FragTrap();
+		FragTrap(std::string name);
+		FragTrap(const FragTrap &copy);
+		~FragTrap();
 		void	attack(const std::string &target);
 		void	highFivesGuys(void);
 };

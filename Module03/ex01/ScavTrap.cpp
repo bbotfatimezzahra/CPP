@@ -29,21 +29,6 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap Deconstructor called" << std::endl;
 }
 
-//=============================OPERATOR OVERLOADING================================//
-
-ScavTrap &ScavTrap::operator=(const ScavTrap &rhs)
-{
-	std::cout << "ScavTrap Assignement operator called" << std::endl;
-	if (this != &rhs)
-	{
-		_name = rhs.getName();
-		_hitPoints = rhs.getHitPoints();
-		_energyPoints = rhs.getEnergyPoints();
-		_attackDamage = rhs.getAttackDamage();
-	}
-	return *this;
-}
-
 //=============================PUBLIC FUNCTIONS================================//
 
 void	ScavTrap::attack(const std::string & target)

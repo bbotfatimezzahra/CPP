@@ -1,10 +1,10 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 #include <iostream>
 
 int	main()
 {
-	ScavTrap	temp("Daniel");
-	ScavTrap	Daniel("No name");
+	FragTrap	temp("Daniel");
+	FragTrap	Daniel("No name");
 
 	/* Assignment check */
 	temp.setAttackDamage(55);
@@ -31,6 +31,6 @@ int	main()
 	Daniel.attack("Kings");
 
 	std::cout << "\nFights are over. Guarding time...\n" << std::endl;
-	Daniel.guardGate();
+	Daniel.highFivesGuys();
 	std::cout << "\nGuareded too much...Enough!\n" << std::endl;
 }
