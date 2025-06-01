@@ -22,4 +22,4 @@ run : re
 push : clean
 	git add ../../.
 	git commit -m "$(ARGS)"
-	git push class
+	git push #class
