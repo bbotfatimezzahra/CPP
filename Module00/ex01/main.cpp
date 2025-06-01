@@ -14,9 +14,12 @@ int	main()
 		std::cout << "ADD : to add a new contact\n";
 		std::cout << "SEARCH : to find a contact\n";
 		std::cout << "EXIT : to quit the program" << std::endl;
-		std::cin >> cmd;
-		std::cin.ignore();
-		if (!cmd.compare("ADD"))
+		if (!std::getline(std::cin, cmd))
+		{
+			std::cout << "X X X | Bad command | X X X" << std::endl;
+			break;
+		}
+		else if (!cmd.compare("ADD"))
 			book.add();
 		else if (!cmd.compare("SEARCH"))
 		{

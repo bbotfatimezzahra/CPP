@@ -1,5 +1,6 @@
 #include "PhoneBook.hpp"
 #include <iostream>
+#include <cstdlib>
 
 PhoneBook::PhoneBook()
 {
@@ -35,28 +36,24 @@ void	PhoneBook::display(void) const
 void	PhoneBook::find(void) const
 {
 	int	i;
-	bool	valid;
 
-	valid = 0;
-	do
+	std::cout << "Enter the index of the contact you want : " << std::endl;
+	std::cin >> i;
+	if (std::cin.eof())
 	{
-		std::cout << "Enter the index of the contact you want : ";
-		std::cout << std::endl;
-		std::cin >> i;
-		if (!std::cin.good() || i <= 0 || i > 8 || i > this->_index)
-		{
-			std::cin.clear();
-			std::cin.ignore();
-			std::cout << "X X X | Out of range index | X X X" << std::endl;
-			if (!this->_index)
-				break;
-		}
-		else
-		{
-			std::cout << "V V V | Contact found | V V V" << std::endl;
-			this->_conts[i - 1].display();
-			std::cout << "V V V | Contact found | V V V" << std::endl;
-			valid = 1;
-		}
-	} while (!valid);
+		std::cout << "X X X | Bad input | X X X" << std::endl;
+		exit(0);
+	}
+	if (i <= 0 || i > 8 || i > this->_index)
+	{
+		std::cout << "X X X | Out of range index | X X X" << std::endl;
+		std::cin.clear();
+	}
+	else
+	{
+		std::cout << "V V V | Contact found | V V V" << std::endl;
+		this->_conts[i - 1].display();
+		std::cout << "V V V | Contact found | V V V" << std::endl;
+	}
+	std::cin.ignore();
 }

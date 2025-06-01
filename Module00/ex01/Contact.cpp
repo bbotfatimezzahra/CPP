@@ -1,6 +1,7 @@
 #include "Contact.hpp"
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 Contact::Contact()
 {
@@ -16,8 +17,8 @@ bool	is_valid_num(std::string str)
 	int	a;
 
 	i = 0;
-	a = 0;
-	while (!a && str[i])
+	a = 1;
+	while (a && str[i])
 	{
 		a = std::isdigit(static_cast<unsigned char>(str[i]));
 		i++;
@@ -50,13 +51,17 @@ std::string	get_input(std::string str, int type)
 	do
 	{
 		std::cout << str << std::endl;
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			std::cout << "X X X | Bad Input | X X X" << std::endl;
+			exit(0);
+		}
 		if (input.empty())
-			std::cout << "XXX Empty Input XXX" << std::endl;
+			std::cout << "X X X | Empty Input | X X X" << std::endl;
 		else if (!type && !is_valid_str(input))
-			std::cout << "XXX Invalid Input XXX" << std::endl;
+			std::cout << "X X X | Invalid Input | X X X" << std::endl;
 		else if (type && !is_valid_num(input))
-			std::cout << "XXX Input Not Number XXX" << std::endl;
+			std::cout << "X X X | Input Not Number | X X X" << std::endl;
 		else
 			valid = 1;
 	} while (!valid);
