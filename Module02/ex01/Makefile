@@ -1,8 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: fbbot <marvin@42.fr>                       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/06/01 20:16:32 by fbbot             #+#    #+#              #
+#    Updated: 2025/06/01 20:17:38 by fbbot            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME := Fixed
 CC := c++
 CPPFLAGS := -Wall -Wextra -Werror -std=c++98
-SRCS := $(wildcard *.cpp)
-HEADS := $(wildcard *.hpp)
+SRCS := main.cpp Fixed.cpp
+HEADS := Fixed.hpp
 
 .PHONY : all clean fclean re run push debug
 
