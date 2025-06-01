@@ -6,7 +6,7 @@
 #    By: fbbot <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/01 20:21:20 by fbbot             #+#    #+#              #
-#    Updated: 2025/06/01 20:22:06 by fbbot            ###   ########.fr        #
+#    Updated: 2025/06/01 20:23:11 by fbbot            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,4 +37,4 @@ debug : re
 push : clean
 	git add ../../.
 	git commit -m "$(ARGS)"
-	git push class
+	git push #class
