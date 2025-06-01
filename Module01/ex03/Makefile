@@ -1,8 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: fbbot <marvin@42.fr>                       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/06/01 19:03:11 by fbbot             #+#    #+#              #
+#    Updated: 2025/06/01 19:04:05 by fbbot            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME := Violent
 CC := c++
 CPPFLAGS := -Wall -Wextra -Werror -std=c++98
-SRCS := $(wildcard *.cpp)
-HEADS := $(wildcard *.hpp)
+SRCS := main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+HEADS := Weapon.hpp HumanA.hpp HumanB.hpp
 
 .PHONY : all clean fclean re run push debug
 

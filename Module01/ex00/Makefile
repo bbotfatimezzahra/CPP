@@ -1,8 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: fbbot <marvin@42.fr>                       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/06/01 18:55:39 by fbbot             #+#    #+#              #
+#    Updated: 2025/06/01 18:56:26 by fbbot            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME := Braiinzz
 CC := c++
 CPPFLAGS := -Wall -Wextra -Werror -std=c++98
-SRCS := $(wildcard *.cpp)
-HEADS := $(wildcard *.hpp)
+SRCS := main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+HEADS := Zombie.hpp
 
 .PHONY : all clean fclean re run push debug
 

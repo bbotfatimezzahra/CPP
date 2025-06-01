@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fbbot <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/01 19:15:07 by fbbot             #+#    #+#             */
+/*   Updated: 2025/06/01 19:16:24 by fbbot            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 #include <iostream>
 
@@ -31,7 +43,7 @@ void	Harl::_error(void)
 
 void	Harl::complain(std::string level)
 {
-	std::string	levels[] = {"debug", "info", "warning", "error"};
+	std::string	levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int	i = 0;
 	
 	while (i < 4 && levels[i].compare(level))

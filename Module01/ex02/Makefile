@@ -1,14 +1,26 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: fbbot <marvin@42.fr>                       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/06/01 18:59:32 by fbbot             #+#    #+#              #
+#    Updated: 2025/06/01 19:01:40 by fbbot            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME := HiBrain
 CC := c++
 CPPFLAGS := -Wall -Wextra -Werror -std=c++98
-SRCS := $(wildcard *.cpp)
-HEADS := $(wildcard *.hpp)
+SRCS := main.cpp
+#HEADS := 
 
 .PHONY : all clean fclean re run push debug
 
 all : $(NAME)
 
-$(NAME) : $(SRCS) $(HEADS)
+$(NAME) : $(SRCS) #$(HEADS)
 	$(CC) $(CPPFLAGS) $(SRCS) -o $(NAME)
 
 clean :
