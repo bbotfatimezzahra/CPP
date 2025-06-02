@@ -1,8 +1,8 @@
 NAME := Trap
 CC := c++
 CPPFLAGS := -Wall -Wextra -Werror -std=c++98
-SRCS := $(wildcard *.cpp)
-HEADS := $(wildcard *.hpp)
+SRCS := main.cpp ClapTrap.cpp ScavTrap.cpp FrapTrap.cpp
+HEADS := ClapTrap.hpp ScavTrap.hpp FrapTrap.hpp
 
 .PHONY : all clean fclean re run push debug
 

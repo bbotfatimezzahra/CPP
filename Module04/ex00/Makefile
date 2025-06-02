@@ -1,0 +1,37 @@
+NAME := Animals
+CXX := c++
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98
+SRCS := main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+OBJS := $(SRCS:.cpp=.o)
+HEADS := Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
+
+.PHONY : all clean fclean re run push debug
+
+.SECONDARY : $(OBJS)
+
+all : $(NAME)
+
+$(NAME) : $(OBJS) $(HEADS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean :
+	rm -rf $(OBJS)
+
+fclean : clean
+	rm $(NAME)
+
+re : fclean all
+
+run : re
+	./$(NAME) $(ARGS)
+
+debug : re
+	valgrind ./$(NAME) $(ARGS)
+
+push : fclean
+	git add ../../.
+	git commit -m "$(ARGS)"
+	git push class

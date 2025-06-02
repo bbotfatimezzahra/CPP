@@ -17,11 +17,11 @@
 |V| Operator overloading
 |V| Orthodox canonical class form
 |3| -------------------------
-| | Inheritance
+|V| Inheritance
 |4| -------------------------
-| | Subtype polymorphism
-| | Abstract classes
-| | Interfaces
+|V| Subtype polymorphism
+|V| Abstract classes
+|V| Interfaces
 |5| -------------------------
 | | Repetition
 | | Exceptions
