@@ -31,6 +31,16 @@ DiamondTrap::~DiamondTrap()
 
 //=============================PUBLIC FUNCTIONS================================//
 
+DiamondTrap & DiamondTrap::operator=(const DiamondTrap &rhs)
+{
+	if (this != &rhs)
+	{
+		ClapTrap::operator=(rhs);
+		_name = rhs.getName();
+	}
+	return *this;
+}
+
 std::string	DiamondTrap::getName(void) const
 {
 	return _name;

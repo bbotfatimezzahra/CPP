@@ -6,7 +6,7 @@
 /*   By: fbbot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 20:15:20 by fbbot             #+#    #+#             */
-/*   Updated: 2025/06/01 20:15:35 by fbbot            ###   ########.fr       */
+/*   Updated: 2025/06/02 12:49:08 by fbbot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ Fixed::Fixed() : _rawbits(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const &other) : _rawbits(other._rawbits)
+Fixed::Fixed(Fixed const &other) 
 {
 	std::cout << "Copy constructor called" << std::endl;
+	*this = other;
 }
 
 Fixed::~Fixed()

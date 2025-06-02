@@ -31,15 +31,10 @@ FragTrap::~FragTrap()
 
 //=============================PUBLIC FUNCTIONS================================//
 
-void	FragTrap::attack(const std::string & target)
+FragTrap &FragTrap::operator=(const FragTrap &rhs)
 {
-	if (!_energyPoints)
-		std::cout << "FragTrap "<< _name << " doesn't have enough energy points to attack!"<< std::endl;
-	else
-	{
-		std::cout << "FragTrap "<< _name << " attacks " << target <<" ,causing "<< _attackDamage << " points of damage!"<< std::endl;
-		_energyPoints--;
-	}
+	ClapTrap::operator=(rhs);
+	return *this;
 }
 
 void	FragTrap::highFivesGuys(void)

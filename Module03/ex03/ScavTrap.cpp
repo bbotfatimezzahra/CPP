@@ -31,6 +31,12 @@ ScavTrap::~ScavTrap()
 
 //=============================PUBLIC FUNCTIONS================================//
 
+ScavTrap &ScavTrap::operator=(const ScavTrap &rhs)
+{
+	ClapTrap::operator=(rhs);
+	return *this;
+}
+
 void	ScavTrap::attack(const std::string & target)
 {
 	if (!_energyPoints)

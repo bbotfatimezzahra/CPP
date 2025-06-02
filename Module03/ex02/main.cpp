@@ -30,7 +30,7 @@ int	main()
 	Daniel.attack("Lions");
 	Daniel.attack("Kings");
 
-	std::cout << "\nFights are over. Guarding time...\n" << std::endl;
+	std::cout << "\nFights are over. High Fives time...\n" << std::endl;
 	Daniel.highFivesGuys();
-	std::cout << "\nGuareded too much...Enough!\n" << std::endl;
+	std::cout << "\n...Enough ...!\n" << std::endl;
 }

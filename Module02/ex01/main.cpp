@@ -6,7 +6,7 @@
 /*   By: fbbot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 20:17:01 by fbbot             #+#    #+#             */
-/*   Updated: 2025/06/01 20:18:57 by fbbot            ###   ########.fr       */
+/*   Updated: 2025/06/02 12:51:29 by fbbot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,21 @@
 int main( void )
 {
 	Fixed a;
-	Fixed const b( 1.2f );
-	Fixed const c( 4.4f );
-
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
+	
 	a = Fixed( 1234.4321f );
 
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
 
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
 	return 0;
 }

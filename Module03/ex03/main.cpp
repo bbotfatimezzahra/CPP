@@ -4,9 +4,11 @@
 int	main()
 {
 	DiamondTrap	Diamond("Daniel");
-	DiamondTrap	Dia(Diamond);
+	DiamondTrap	Dia;
 
-	std::cout << Dia.getName() << Dia.getHitPoints() << Dia.getHitPoints() << std::endl;
+	Dia = Diamond;
+	Dia.whoAmI();
+	std::cout << Dia.getHitPoints() << Dia.getEnergyPoints() <<Dia.getAttackDamage()<< std::endl;
 	Diamond.attack("Pirates");
 	Diamond.attack("Kings");
 	Diamond.attack("Lions");

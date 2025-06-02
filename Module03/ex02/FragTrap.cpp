@@ -31,17 +31,6 @@ FragTrap::~FragTrap()
 
 //=============================PUBLIC FUNCTIONS================================//
 
-void	FragTrap::attack(const std::string & target)
-{
-	if (!_energyPoints)
-		std::cout << "FragTrap "<< _name << " doesn't have enough energy points to attack!"<< std::endl;
-	else
-	{
-		std::cout << "FragTrap "<< _name << " attacks " << target <<" ,causing "<< _attackDamage << " points of damage!"<< std::endl;
-		_energyPoints--;
-	}
-}
-
 void	FragTrap::highFivesGuys(void)
 {
 	std::cout << "FragTrap says : LET'S HIGH FIVE GUYS" << std::endl;
