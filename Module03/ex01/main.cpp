@@ -20,6 +20,7 @@ int	main()
 
 	/* Assignment check */
 	temp.setAttackDamage(55);
+	// ClapTrap *p = new ScavTrap();
 
 	/* Info */
 	std::cout << "\n---------- ScavTrap Daniel ----------" << std::endl;
@@ -43,5 +44,6 @@ int	main()
 
 	std::cout << "\nFights are over. Guarding time...\n" << std::endl;
 	Daniel.guardGate();
+	// p->guardGate();
 	std::cout << "\nGuareded too much...Enough!\n" << std::endl;
 }

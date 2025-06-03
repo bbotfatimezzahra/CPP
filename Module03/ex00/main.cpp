@@ -18,7 +18,7 @@ int	main()
 	ClapTrap	Jack("Jack");
 	
 	/* Info */
-	Jack.setAttackDamage(2);
+	Jack.setAttackDamage(0);
 	std::cout << "\n---------- ClapTrap Jack ----------" << std::endl;
 	std::cout << "Hitpoints: " << Jack.getHitPoints() << " ";
 	std::cout << "Energy: " << Jack.getEnergyPoints() << " ";
@@ -30,7 +30,9 @@ int	main()
 
 	Jack.attack("Sharks");
 	Jack.attack("Pirates");
-	Jack.takeDamage(3);
+	Jack.takeDamage(20);
+	for (int i = 0; i < 20; i++)
+		Jack.attack("Pirates");
 	Jack.takeDamage(4);
 	Jack.beRepaired(10);
 	Jack.attack("Dragon");
