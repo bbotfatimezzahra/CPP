@@ -11,6 +11,7 @@ Dog::Dog()
 Dog::Dog(const Dog &copy) : AAnimal(copy)
 {
 	std::cout << "Dog Copy Constructor" << std::endl;
+	_brain = new Brain(*copy.getBrain());
 }
 
 Dog::~Dog(void)

@@ -11,6 +11,7 @@ Cat::Cat()
 Cat::Cat(const Cat &copy) : AAnimal(copy)
 {
 	std::cout << "Cat Copy Constructor" << std::endl;
+	_brain = new Brain(*copy.getBrain());
 }
 
 Cat::~Cat(void)
