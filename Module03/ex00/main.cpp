@@ -6,7 +6,7 @@
 /*   By: fbbot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 21:52:54 by fbbot             #+#    #+#             */
-/*   Updated: 2025/06/01 21:52:57 by fbbot            ###   ########.fr       */
+/*   Updated: 2025/06/03 16:18:18 by fbbot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ int	main()
 	Jack.attack("Sharks");
 	Jack.attack("Pirates");
 	Jack.takeDamage(20);
-	for (int i = 0; i < 20; i++)
-		Jack.attack("Pirates");
 	Jack.takeDamage(4);
 	Jack.beRepaired(10);
 	Jack.attack("Dragon");

@@ -6,7 +6,7 @@
 /*   By: fbbot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 21:54:50 by fbbot             #+#    #+#             */
-/*   Updated: 2025/06/02 11:50:22 by fbbot            ###   ########.fr       */
+/*   Updated: 2025/06/03 16:19:11 by fbbot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	main()
 
 	/* Assignment check */
 	temp.setAttackDamage(55);
-	// ClapTrap *p = new ScavTrap();
 
 	/* Info */
 	std::cout << "\n---------- ScavTrap Daniel ----------" << std::endl;
@@ -44,6 +43,5 @@ int	main()
 
 	std::cout << "\nFights are over. Guarding time...\n" << std::endl;
 	Daniel.guardGate();
-	// p->guardGate();
 	std::cout << "\nGuareded too much...Enough!\n" << std::endl;
 }

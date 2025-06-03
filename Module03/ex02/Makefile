@@ -1,8 +1,8 @@
 NAME := Trap
 CC := c++
 CPPFLAGS := -Wall -Wextra -Werror -std=c++98
-SRCS := main.cpp ClapTrap.cpp ScavTrap.cpp FrapTrap.cpp
-HEADS := ClapTrap.hpp ScavTrap.hpp FrapTrap.hpp
+SRCS := main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+HEADS := ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 .PHONY : all clean fclean re run push debug
 
