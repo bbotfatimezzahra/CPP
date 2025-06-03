@@ -30,7 +30,7 @@ std::string	Animal::getType(void) const
 	return _type;
 }
 
-void	Animal::setType(std::string type)
+void	Animal::setType(const std::string &type)
 {
 	_type = type;
 }

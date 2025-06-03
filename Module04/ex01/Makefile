@@ -1,9 +1,9 @@
-NAME := Animals
+NAME := Fire
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
-SRCS := main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS := main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJS := $(SRCS:.cpp=.o)
-HEADS := Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
+HEADS := Animal.hpp Cat.hpp Dog.hpp 
 
 .PHONY : all clean fclean re run push debug
 
@@ -25,7 +25,7 @@ fclean : clean
 
 re : fclean all
 
-run : re
+run : re clean
 	./$(NAME) $(ARGS)
 
 debug : re
