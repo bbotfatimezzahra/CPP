@@ -4,6 +4,8 @@
 # include "AMateria.hpp"
 # include <string>
 
+class AMateria;
+
 class ICharacter
 {
 	public:

@@ -3,25 +3,26 @@
 
 Dog::Dog()
 {
-	std::cout << "Dog Default Constructor" << std::endl;
+	std::cout << "Dog 🐶 Default Constructor" << std::endl;
 	setType("Dog");
 	_brain = new Brain();
 }
 
 Dog::Dog(const Dog &copy) : Animal(copy)
 {
-	std::cout << "Dog Copy Constructor" << std::endl;
+	std::cout << "Dog  🐶 Copy Constructor" << std::endl;
+	_brain = new Brain(*copy.getBrain());
 }
 
 Dog::~Dog(void)
 {
-	std::cout << "Dog Deconstructor" << std::endl;
+	std::cout << "Dog  🐶 Deconstructor" << std::endl;
 	delete _brain;
 }
 
 Dog & Dog::operator=(const Dog &rhs)
 {
-	std::cout << "Dog Assignement Operator" << std::endl;
+	std::cout << "Dog  🐶 Assignement Operator" << std::endl;
 	if (this != &rhs)
 	{
 		Animal::operator=(rhs);	
@@ -44,5 +45,5 @@ Brain	*Dog::getBrain(void) const
 
 void	Dog::makeSound(void) const
 {
-	std::cout << "BARK BARK" << std::endl;
+	std::cout << " 🐶 BARK BARK 🐶 " << std::endl;
 }

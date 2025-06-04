@@ -3,19 +3,23 @@
 
 Brain::Brain()
 {
+	std::cout << "Brain 🧠 Default Constructor" << std::endl;
 }
 
 Brain::Brain(const Brain &copy)
 {
+	std::cout << "Brain  🧠 Copy Constructor" << std::endl;
 	*this = copy;
 }
 
 Brain::~Brain()
 {
+	std::cout << "Brain  🧠 DeConstructor" << std::endl;
 }
 
 Brain & Brain::operator=(const Brain &rhs)
 {
+	std::cout << "Brain  🧠 Assignement Operator" << std::endl;
 	if (this != &rhs)
 	{
 		for(int i=0; i < 100; i++)

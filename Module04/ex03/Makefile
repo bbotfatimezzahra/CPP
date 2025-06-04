@@ -1,9 +1,9 @@
 NAME := Interface
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
-SRCS := main.cpp AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp
+SRCS :=  main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 OBJS := $(SRCS:.cpp=.o)
-HEADS := AAnimal.hpp Cat.hpp Dog.hpp 
+HEADS := $(SRCS:.cpp=.hpp) ICharacter.hpp IMateriaSource.hpp
 
 .PHONY : all clean fclean re run push debug
 
@@ -11,7 +11,7 @@ HEADS := AAnimal.hpp Cat.hpp Dog.hpp
 
 all : $(NAME)
 
-$(NAME) : $(OBJS) $(HEADS)
+$(NAME) : $(OBJS) #$(HEADS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
@@ -29,7 +29,7 @@ run : re clean
 	./$(NAME) $(ARGS)
 
 debug : re
-	valgrind ./$(NAME) $(ARGS)
+	valgrind --leak-check=full ./$(NAME) $(ARGS)
 
 push : fclean
 	git add ../../.

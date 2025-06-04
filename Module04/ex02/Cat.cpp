@@ -3,26 +3,26 @@
 
 Cat::Cat()
 {
-	std::cout << "Cat Default Constructor" << std::endl;
+	std::cout << "Cat  🐱 Default Constructor" << std::endl;
 	setType("Cat");
 	_brain = new Brain();
 }
 
 Cat::Cat(const Cat &copy) : AAnimal(copy)
 {
-	std::cout << "Cat Copy Constructor" << std::endl;
+	std::cout << "Cat 🐱  Copy Constructor" << std::endl;
 	_brain = new Brain(*copy.getBrain());
 }
 
 Cat::~Cat(void)
 {
-	std::cout << "Cat Deconstructor" << std::endl;
+	std::cout << " 🐱 Cat Deconstructor" << std::endl;
 	delete _brain;
 }
 
 Cat & Cat::operator=(const Cat &rhs)
 {
-	std::cout << "Cat Assignement Operator" << std::endl;
+	std::cout << " 🐱 Cat Assignement Operator" << std::endl;
 	if (this != &rhs)
 	{
 		AAnimal::operator=(rhs);	
@@ -45,5 +45,5 @@ Brain	*Cat::getBrain(void) const
 
 void	Cat::makeSound(void) const
 {
-	std::cout << "MEOW MEOW" << std::endl;
+	std::cout << " 🐱 MEOW MEOW 🐱 " << std::endl;
 }
