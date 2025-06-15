@@ -85,6 +85,6 @@ const char * AForm::GradeTooLowException::what() const throw()
 
 std::ostream	&operator<<(std::ostream &out, const AForm &obj)
 {
-	out << "AForm : " << obj.getName() << " Signature grade : " << obj.getSignGrade() << " Execution grade : " << obj.getExecuteGrade() << " Status : " << ((obj.getStatus())? "SIGNED" : "NOT SIGNED")<< std::endl;
+	out << "Form : {" << obj.getName() << "} Signature grade : {" << obj.getSignGrade() << "} Execution grade : {" << obj.getExecuteGrade() << "} Status : {" << ((obj.getStatus())? "SIGNED}" : "NOT SIGNED}")<< std::endl;
 	return out;
 }

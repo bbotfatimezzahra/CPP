@@ -15,7 +15,7 @@ int main (int argc, char **argv)
 {
 	(void)argc;
 	(void)argv;
-
+try {
 	Bureaucrat hermano("Hermano", LOWEST_GRADE);
 
 	Bureaucrat ebil("Ebil", HIGHEST_GRADE);
@@ -24,7 +24,7 @@ int main (int argc, char **argv)
 	cout << endl;
 	ShrubberyCreationForm scf("Ebil");
 	cout << scf;
-//	PresidentialPardonForm ppf("Ebil");
+	PresidentialPardonForm ppf("Ebil");
 	RobotomyRequestForm rrf("Ebil");
 	cout << endl;
 
@@ -33,11 +33,11 @@ int main (int argc, char **argv)
 	ebil.executeForm(scf);
 
 	cout << endl;
-/*
+
 	ebil.executeForm(ppf);
 	ppf.beSigned(ebil);
 	ebil.executeForm(ppf);
-*/
+
 	cout << endl;
 
 	ebil.executeForm(rrf);
@@ -46,8 +46,8 @@ int main (int argc, char **argv)
 
 	cout << endl;
 
-	try {
-		hermano.executeForm(scf);
+	
+	scf.execute(hermano);
 	}
 	catch (std::exception& e) {
 		cerr << e.what() << endl;

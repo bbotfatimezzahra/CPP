@@ -28,18 +28,18 @@ class AForm
 		int	getExecuteGrade(void) const;
 		bool	getStatus(void) const;
 		void	beSigned(const Bureaucrat &signer);
-		virtual void execute(const Bureaucrat &executor) const;
+		virtual void execute(const Bureaucrat &executor) const = 0;
 		class GradeTooHighException : public std::exception{
 			public :
-				const char *what() const throw();
+				virtual const char *what() const throw();
 		};
 		class GradeTooLowException : public std::exception{
 			public :
-				const char *what() const throw();
+				virtual const char *what() const throw();
 		};
 		class NotSignedException : public std::exception{
 			public :
-				const char *what() const throw();
+				virtual const char *what() const throw();
 		};
 };
 

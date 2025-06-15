@@ -12,7 +12,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy):
 	*this = copy;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("ShrubberyCreation", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("Shrubbery Creation Form", 145, 137)
 {
 	_target = target;
 }
@@ -92,24 +92,8 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 	file.close();
 }
 
-const char * ShrubberyCreationForm::NotSignedException::what() const throw()
-{
-	return "Form Not Signed!";
-}
-
-const char * ShrubberyCreationForm::GradeTooHighException::what() const throw()
-{
-	return "Grade Too High!";
-}
-
-const char * ShrubberyCreationForm::GradeTooLowException::what() const throw()
-{
-	return "Grade Too Low!";
-}
-
-
 std::ostream	&operator<<(std::ostream &out, const ShrubberyCreationForm &obj)
 {
-	out << "ShrubberyCreationForm : " << obj.getName() << " Signature grade : " << obj.getSignGrade() << " Execution grade : " << obj.getExecuteGrade() << "Target : " << obj.getTarget() << " Status : " << ((obj.getStatus())? "SIGNED" : "NOT SIGNED")<< std::endl;
+	out << "ShrubberyCreationForm : {" << obj.getName() << "} Signature grade : {" << obj.getSignGrade() << "} Execution grade : {" << obj.getExecuteGrade() << "} Target : {" << obj.getTarget() << "} Status : {" << ((obj.getStatus())? "SIGNED}" : "NOT SIGNED}") << std::endl;
 	return out;
 }
