@@ -28,7 +28,7 @@ int main(void)
 	try
 	{
 		// grade too low
-		Bureaucrat	a("A", LOWEST_GRADE + 1);
+		Bureaucrat	a("A", LOWEST_GRADE);
 		cout << a << endl;
 	}
 	catch (std::exception& e) {

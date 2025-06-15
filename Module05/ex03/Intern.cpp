@@ -23,13 +23,12 @@ Intern &Intern::operator=(const Intern &rhs)
 
 AForm	*Intern::makeForm(std::string name ,std::string target) const
 {
-	int	num = 3;
 	AForm	*result = NULL;
 
-	std::string	names[num] = {"Shrubbery creation", "Robotomy request", "Presidential pardon"};
-	AForm	*forms[num] = {new ShrubberyCreationForm(target), new RobotomyRequestForm(target), new PresidentialPardonForm(target)};
+	std::string	names[3 ] = {"Shrubbery creation", "Robotomy request", "Presidential pardon"};
+	AForm	*forms[3 ] = {new ShrubberyCreationForm(target), new RobotomyRequestForm(target), new PresidentialPardonForm(target)};
 
-	for (int i=0; i < num; i++)
+	for (int i=0; i < 3 ; i++)
 	{
 		if (!name.compare(names[i]))
 			result = forms[i];
