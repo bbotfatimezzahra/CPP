@@ -1,25 +1,23 @@
 #pragma once
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
+# include <string>
+# include <exception>
 
-static class ScalarConverter
+class ScalarConverter
 {
-	public :
+	private :
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter &copy);
 		ScalarConverter &operator=(const ScalarConverter &rhs);
 		~ScalarConverter();
-		void convert(const std::string &str);
-};
+	public :
+		static void convert(const std::string &str);
+		class ImpossibleConversionException : public std::exception{
+			public :
+				const char *what() const throw();
+		};
 
-typedef enum e_types
-{
-	NONE,
-	CHAR,
-	INT,
-	FLOAT,
-	DOUBLE,
-	LITERAL
-}	t_types;
+};
 
 #endif
