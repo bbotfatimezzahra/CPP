@@ -23,10 +23,10 @@
 |V| Abstract classes
 |V| Interfaces
 |5| -------------------------
-| | Repetition
-| | Exceptions
+|V| Repetition
+|V| Exceptions
 |6| -------------------------
-| | Casts
+|V| Casts
 |7| -------------------------
 | | Templates
 |8| -------------------------
