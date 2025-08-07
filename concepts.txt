@@ -28,7 +28,7 @@
 |6| -------------------------
 |V| Casts
 |7| -------------------------
-| | Templates
+|V| Templates
 |8| -------------------------
 | | Templated containers
 | | Iterators
