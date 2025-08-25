@@ -5,8 +5,8 @@
 class Span
 {
 	private :
-		std::vector<int>	con;
-		unsigned int	size;
+		std::vector<int>	_con;
+		unsigned int	_size;
 		Span();
 	public :
 		Span(unsigned int N);
