@@ -1,28 +1,23 @@
 #pragma once
 #ifndef MUTANTSTACK_HPP
 # define MUTANTSTACK_HPP
+# include<iostream>
 # include<algorithm>
 # include<stack>
 
 template<typename T>
-class MutantStack
+class MutantStack : public std::stack<T>
 {
-	private :
-		std::stack<T>	_stack;
 	public :
-		MutantStack();
-		MutantStack(const MutantStack &copy);
-		MutantStack &operator=(const MutantStack &rhs);
-		~MutantStack();
-		T &top();
-		bool empty() const;
-		int size()const;
-		void push(const T &elem);
-		void pop();
-		begin();
-		rbegin();
-		end();
-		rend();
+		MutantStack(){};
+		MutantStack(const MutantStack<T> &copy) { *this = copy; };
+		MutantStack<T> &operator=(const MutantStack<T> &rhs) { this->c.operator=(rhs); return *this;};
+		~MutantStack(){};
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		iterator begin(void) { return this->c.begin();};
+		iterator rbegin(void){ return this->c.rbegin();};
+		iterator end(void){ return this->c.end();};
+		iterator rend(void){ return this->c.rend();};
 };
 
 #endif
