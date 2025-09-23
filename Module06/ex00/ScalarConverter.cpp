@@ -22,11 +22,6 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &rhs)
 ScalarConverter::~ScalarConverter()
 {}
 
-const char *ScalarConverter::ImpossibleConversionException::what() const throw()
-{
-	return "Impossible Conversion!!";
-}
-
 static bool	isChar(const std::string &str)
 {
 	if (str.length() == 1 && !std::isdigit(str[0]))
@@ -39,7 +34,7 @@ static bool	isInt(const std::string &str)
 	size_t	i=0;
 
 	if (str.length() > 11)
-		throw ScalarConverter::ImpossibleConversionException();
+		return false;
 	if (str[i] == '-')
 		i++;
 	while (i < str.length())
@@ -193,23 +188,16 @@ static void	castLiteral(const std::string &str)
 
 void ScalarConverter::convert(const std::string &str)
 {
-	try
-	{
-		if (isChar(str))
-			castChar(str);
-		else if (isInt(str))
-			castInt(str);
-		else if (isFloat(str))
-			castFloat(str);
-		else if (isDouble(str))
-			castDouble(str);
-		else if (isLiteral(str))
-			castLiteral(str);
-		else
-			std::cout << "UNKOWN TYPE" << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	if (isChar(str))
+		castChar(str);
+	else if (isInt(str))
+		castInt(str);
+	else if (isFloat(str))
+		castFloat(str);
+	else if (isDouble(str))
+		castDouble(str);
+	else if (isLiteral(str))
+		castLiteral(str);
+	else
+		std::cout << "UNKOWN TYPE" << std::endl;
 }

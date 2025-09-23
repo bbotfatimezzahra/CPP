@@ -2,7 +2,6 @@
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
 # include <string>
-# include <exception>
 
 class ScalarConverter
 {
@@ -13,11 +12,6 @@ class ScalarConverter
 		~ScalarConverter();
 	public :
 		static void convert(const std::string &str);
-		class ImpossibleConversionException : public std::exception{
-			public :
-				const char *what() const throw();
-		};
-
 };
 
 #endif
