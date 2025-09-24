@@ -8,27 +8,27 @@ using std::endl;
 
 int main(void)
 {
-	cout << "GENERAL" << endl;
+	// cout << "GENERAL" << endl;
 
-	// Constructor
-	Bureaucrat	a("Ana", 87);
-	// Copy Constructor
-	Bureaucrat	b(a);
-	// Copy assignment
-	Bureaucrat	c = b;
+	// // Constructor
+	// Bureaucrat	a("Ana", -2147483648);
+	// // Copy Constructor
+	// Bureaucrat	b(a);
+	// // Copy assignment
+	// Bureaucrat	c = b;
 
-	// ostream overload
-	cout << "a: " << a << endl;
-	cout << "b: " << b << endl;
-	cout << "c: " << c << endl;
+	// // ostream overload
+	// cout << "a: " << a << endl;
+	// cout << "b: " << b << endl;
+	// cout << "c: " << c << endl;
 
-	cout << endl;
+	// cout << endl;
 
 	cout << "TEST 1" << endl;
 	try
 	{
 		// grade too low
-		Bureaucrat	a("A", LOWEST_GRADE);
+		Bureaucrat	a("A", -1);
 		cout << a << endl;
 	}
 	catch (std::exception& e) {

@@ -39,9 +39,9 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
 	AForm::execute(executor);
 
-	std::srand(std::time(NULL));
+	// std::srand(std::time(NULL));//ask later
 	std::cout << "DRILLING NOOIIISE " << std::endl;
-	if (std::rand() % 2 == 0)
+	if (std::time(NULL) % 2 == 0)
 		std::cout << _target << " is Robotomized Successfully" << std::endl;
 	else
 		std::cout << _target << "Robotomization Failed " << std::endl;

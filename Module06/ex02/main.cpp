@@ -4,7 +4,7 @@
 int main(void)
 {
 	Base	*obj = generate();
-	//Base	*obj = new Base();
+	// Base	*obj = new Base();
 	identify(obj);
 	identify(*obj);
 	delete obj;

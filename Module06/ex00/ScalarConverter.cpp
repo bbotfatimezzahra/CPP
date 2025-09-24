@@ -33,8 +33,8 @@ static bool	isInt(const std::string &str)
 {
 	size_t	i=0;
 
-	if (str.length() > 11)
-		return false;
+	//if (str.length() > 11)//heta lmanbe3d oxofi m3aha
+	//	throw ScalarConverter::ImpossibleConversionException();
 	if (str[i] == '-')
 		i++;
 	while (i < str.length())
@@ -108,7 +108,7 @@ static bool	isLiteral(const std::string &str)
 	else
 		return false;
 }
-
+//radi lbal m3a overflow
 static void	castChar(const std::string &str)
 {
 	char	c = str[0];

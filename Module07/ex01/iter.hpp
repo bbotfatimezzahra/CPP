@@ -3,8 +3,8 @@
 # define ITER_HPP
 #include <iostream>
 
-template<typename T>
-void	iter(T *arr, size_t len, void(*func)(T&))
+template<typename T, typename F>
+void	iter(T *arr, size_t len, void func(F&))
 {
 	for(size_t i=0; i < len; i++)
 	{

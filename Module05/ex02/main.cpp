@@ -11,48 +11,46 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-int main (int argc, char **argv)
+int main ()
 {
-	(void)argc;
-	(void)argv;
-try {
-	Bureaucrat hermano("Hermano", LOWEST_GRADE);
+	try {
+		Bureaucrat hermano("Hermano", LOWEST_GRADE);
 
-	Bureaucrat ebil("Ebil", HIGHEST_GRADE);
-	cout << endl;
+		Bureaucrat ebil("Ebil", HIGHEST_GRADE);
+		cout << endl;
 
-	cout << endl;
-	ShrubberyCreationForm scf("Ebil");
-	cout << scf;
-	PresidentialPardonForm ppf("Ebil");
-	RobotomyRequestForm rrf("Ebil");
-	cout << endl;
+		cout << endl;
+		ShrubberyCreationForm scf("Ebil");
+		cout << scf;
+		PresidentialPardonForm ppf("Ebil");
+		RobotomyRequestForm rrf("Ebil");
+		cout << endl;
 
-	ebil.executeForm(scf);
-	scf.beSigned(ebil);
-	ebil.executeForm(scf);
+		ebil.executeForm(scf);
+		scf.beSigned(ebil);
+		ebil.executeForm(scf);
 
-	cout << endl;
+		cout << endl;
 
-	ebil.executeForm(ppf);
-	ppf.beSigned(ebil);
-	ebil.executeForm(ppf);
+		ebil.executeForm(ppf);
+		ppf.beSigned(ebil);
+		ebil.executeForm(ppf);
 
-	cout << endl;
+		cout << endl;
 
-	ebil.executeForm(rrf);
-	rrf.beSigned(ebil);
-	ebil.executeForm(rrf);
+		ebil.executeForm(rrf);
+		rrf.beSigned(ebil);
+		ebil.executeForm(rrf);
 
-	cout << endl;
+		cout << endl;
 
-	
-	scf.execute(hermano);
-	}
-	catch (std::exception& e) {
-		cerr << e.what() << endl;
-	}
+		
+		scf.execute(hermano);
+		}
+		catch (std::exception& e) {
+			cerr << e.what() << endl;
+		}
 
-	cout << endl;
-	return EXIT_SUCCESS;
+		cout << endl;
+		return EXIT_SUCCESS;
 }
