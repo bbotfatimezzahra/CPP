@@ -3,7 +3,12 @@
 #include <cstdlib>
 #include <cerrno>
 #include <climits>
+#include <cfloat>
 #include <iomanip>
+
+static void	castInt(const std::string &str);
+static void	castFloat(const std::string &str);
+static void	castDouble(const std::string &str);
 
 ScalarConverter::ScalarConverter()
 {}
@@ -33,8 +38,6 @@ static bool	isInt(const std::string &str)
 {
 	size_t	i=0;
 
-	//if (str.length() > 11)//heta lmanbe3d oxofi m3aha
-	//	throw ScalarConverter::ImpossibleConversionException();
 	if (str[i] == '-')
 		i++;
 	while (i < str.length())
@@ -108,7 +111,7 @@ static bool	isLiteral(const std::string &str)
 	else
 		return false;
 }
-//radi lbal m3a overflow
+
 static void	castChar(const std::string &str)
 {
 	char	c = str[0];
@@ -126,11 +129,14 @@ static void	castInt(const std::string &str)
 {
 	errno = 0;
 	long	num = std::strtol(str.c_str(), 0, 10);
-	if (errno || num < INT_MIN || num > INT_MAX)
-		throw ScalarConverter::ImpossibleConversionException();
-	if (std::isprint(static_cast<unsigned char>(num)))
 
+	if (errno || num < INT_MIN || num > INT_MAX)
+		return (castFloat(str));
+
+	if (std::isprint(static_cast<unsigned char>(num)))
 		std::cout << "char: " << static_cast<char>(num) << std::endl;
+	else if ( num < 0 || num > 255)
+		std::cout << "char: Impossible"<< std::endl;
 	else
 		std::cout << "char: Non displayable"<< std::endl;
 	std::cout << "int: " << num << std::endl;
@@ -141,15 +147,21 @@ static void	castInt(const std::string &str)
 static void	castFloat(const std::string &str)
 {
 	errno = 0;
-	float	num = std::strtof(str.c_str(), 0);
-	if (errno)
-		throw ScalarConverter::ImpossibleConversionException();
+	double	num = std::strtod(str.c_str(), 0);
+
+	if (errno || num < FLT_MIN || num > FLT_MAX)
+		return (castDouble(str));
 
 	if (std::isprint(static_cast<unsigned char>(num)))
 		std::cout << "char: " << static_cast<char>(num) << std::endl;
+	else if ( num < 0 || num > 255)
+		std::cout << "char: Impossible"<< std::endl;
 	else
 		std::cout << "char: Non displayable"<< std::endl;
-	std::cout << "int: " << static_cast<int>(num) << std::endl;
+	if (num < INT_MIN || num > INT_MAX)
+		std::cout << "int: Impossible"<< std::endl;
+	else
+		std::cout << "int: " << static_cast<int>(num) << std::endl;
 	std::cout << std::fixed <<  std::setprecision(1) << "float: " << num <<"f"<< std::endl;
 	std::cout << std::fixed <<  std::setprecision(1) << "double: " << static_cast<double>(num) << std::endl;
 }
@@ -157,16 +169,31 @@ static void	castFloat(const std::string &str)
 static void	castDouble(const std::string &str)
 {
 	errno = 0;
-	double	num = std::strtod(str.c_str(), 0);
-	if (errno)
-		throw ScalarConverter::ImpossibleConversionException();
+	long double	num = std::strtold(str.c_str(), 0);
+
+	if (errno || num < DBL_MIN || num > DBL_MAX)
+	{
+		std::cout << "char: Impossible"<< std::endl;
+		std::cout << "int: Impossible"<< std::endl;
+		std::cout << "float: Impossible"<< std::endl;
+		std::cout << "double: Impossible"<< std::endl;
+		return;
+	}
 
 	if (std::isprint(static_cast<unsigned char>(num)))
 		std::cout << "char: " << static_cast<char>(num) << std::endl;
+	else if ( num < 0 || num > 255)
+		std::cout << "char: Impossible"<< std::endl;
 	else
 		std::cout << "char: Non displayable"<< std::endl;
-	std::cout << "int: " << static_cast<int>(num) << std::endl;
-	std::cout << std::fixed <<  std::setprecision(1) <<  "float: " << static_cast<float>(num) <<"f"<< std::endl;
+	if (num < INT_MIN || num > INT_MAX)
+		std::cout << "int: Impossible"<< std::endl;
+	else
+		std::cout << "int: " << static_cast<int>(num) << std::endl;
+	if (num < FLT_MIN || num > FLT_MAX)
+		std::cout << "float: Impossible"<< std::endl;
+	else
+		std::cout << std::fixed <<  std::setprecision(1) <<  "float: " << static_cast<float>(num) <<"f"<< std::endl;
 	std::cout << std::fixed <<  std::setprecision(1) <<  "double: " << num << std::endl;
 }
 
@@ -190,12 +217,12 @@ void ScalarConverter::convert(const std::string &str)
 {
 	if (isChar(str))
 		castChar(str);
-	else if (isInt(str))
-		castInt(str);
 	else if (isFloat(str))
 		castFloat(str);
 	else if (isDouble(str))
 		castDouble(str);
+	else if (isInt(str))
+		castInt(str);
 	else if (isLiteral(str))
 		castLiteral(str);
 	else

@@ -1,6 +1,7 @@
 #include "ScalarConverter.hpp"
 #include <iostream>
 #include<limits.h>
+#include <exception>
 
 int main(int ac, char *av[])
 {
@@ -10,7 +11,13 @@ int main(int ac, char *av[])
 		return 0;
 	}
 
-	ScalarConverter::convert(av[1]);
-	std::cout<<__DBL_MAX__<<std::endl;
+	try
+	{
+		ScalarConverter::convert(av[1]);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return 0;
 }

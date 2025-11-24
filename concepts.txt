@@ -1,5 +1,5 @@
 |0|--------------------------
-|V| Namespaces
+|*| Namespaces
 |V| Classes
 |V| Member functions
 |V| Stdio streams
