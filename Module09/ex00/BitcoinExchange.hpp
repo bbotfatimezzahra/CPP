@@ -17,10 +17,10 @@ class BitcoinExchange
 		BitcoinExchange(std::string file);
 		BitcoinExchange & operator=(const BitcoinExchange &rhs);
 		~BitcoinExchange();
-		void 	parseFile(std::string file, std::string delim);
+		bool 	parseFile(std::string file, std::string delim);
 		void 	calculateValue(std::string date, float amount);
 		void 	handleError(std::string str, int flag);
-		void 	checkDate(std::string line, int flag);
+		bool 	checkDate(std::string line, int flag);
 		float 	checkValue(std::string line, int flag);
 		class 	DataBaseException : public std::exception{
 			public :

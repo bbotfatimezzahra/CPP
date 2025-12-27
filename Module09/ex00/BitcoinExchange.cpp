@@ -85,7 +85,7 @@ void 	BitcoinExchange::handleError(std::string str, int flag)
 		std::cout << "Error: "<< str << std::endl;
 }
 
-void 	BitcoinExchange::checkDate(std::string line, int flag)
+bool 	BitcoinExchange::checkDate(std::string line, int flag)
 {
 	int date[3];
 	std::string::size_type n;
@@ -97,21 +97,22 @@ void 	BitcoinExchange::checkDate(std::string line, int flag)
 		{
 			n = line.find("-");
 			if (n == std::string::npos)
-				handleError("Bad Input", flag);
+				return (handleError("Bad Input => "+line, flag), false);
 		}
 		if (!strToInt(line.substr(0,n), date[i]))
-			handleError("Bad Input", flag);
+			return (handleError("Bad Input => "+line, flag), false);
 		if (date[i] <= 0)
-			handleError("Bad Input", flag);
+			return (handleError("Bad Input => "+line, flag), false);
 		if (i == 0 && date[i] > 2025)
-			handleError("Bad Input", flag);
+			return (handleError("Bad Input => "+line, flag), false);
 		if (i == 1 && date[i] > 12)
-			handleError("Bad Input", flag);
+			return (handleError("Bad Input => "+line, flag), false);
 		if (i == 2 && !checkDay(date))
-			handleError("Bad Input", flag);
+			return (handleError("Bad Input => "+line, flag), false);
 		if (i != 2)
 			line = line.substr(n+1 , line.size()-n);
 	}
+	return true;
 }
 
 float 	BitcoinExchange::checkValue(std::string line, int flag)
@@ -155,7 +156,7 @@ void 	BitcoinExchange::calculateValue(std::string date, float amount)
 	std::cout << date << " => "<< amount << " = " << value * amount << std::endl; 
 }
 
-void 	BitcoinExchange::parseFile(std::string filename, std::string delim)
+bool 	BitcoinExchange::parseFile(std::string filename, std::string delim)
 {
 	int flag = (delim.compare(",") == 0)? 0 : 1;
 	std::ifstream file(filename.c_str());
@@ -164,13 +165,15 @@ void 	BitcoinExchange::parseFile(std::string filename, std::string delim)
 	if (!file.is_open())
 	{
 		handleError("Cannot open file",flag);
-		return;
+		return false;
 	}
-	std::getline(file, line);
-	if (line.empty())
+	if (!std::getline(file, line))
+	{
 		handleError("Empty file", flag);
+		return false;
+	}
 	if (!flag && line.compare("date,exchange_rate"))
-		handleError("malformed first line", flag);
+		return (handleError("malformed first line", flag), false);
 	else if (flag && line.compare("date | value"))
 		handleError("malformed first line", flag);
 
@@ -179,19 +182,21 @@ void 	BitcoinExchange::parseFile(std::string filename, std::string delim)
 	std::string::size_type n;
 
 	line.clear();
-	std::getline(file,line);
-	while (!line.empty())
+	while (std::getline(file,line))
 	{
 		n = line.find(delim);
 		if (n == std::string::npos)
 		{
-			handleError("Bad input", flag);
+			handleError("Bad input => "+line, flag);
 			line.clear();
-			std::getline(file,line);
 			continue;
 		}
 		date = line.substr(0, n);
-		checkDate(date, flag);
+		if (!checkDate(date, flag))
+		{
+			line.clear();
+		 	continue;
+		}
 		n += delim.size();
 		value = checkValue(line.substr(n, line.size()-n), flag);
 		if (!flag)
@@ -199,12 +204,13 @@ void 	BitcoinExchange::parseFile(std::string filename, std::string delim)
 		else if (value >= 0)
 			calculateValue(date, value);
 		line.clear();
-		std::getline(file,line);
 	}
+	return true;
 }
 
 BitcoinExchange::BitcoinExchange(std::string file)
 {
-	parseFile("data.csv", ",");
+	if (!parseFile("data.csv", ","))
+		return ;
 	parseFile(file, " | ");
 }
