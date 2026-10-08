@@ -1,5 +1,5 @@
 |0|--------------------------
-|*| Namespaces
+|V| Namespaces
 |V| Classes
 |V| Member functions
 |V| Stdio streams
@@ -30,20 +30,9 @@
 |7| -------------------------
 |V| Templates
 |8| -------------------------
-| | Templated containers
-| | Iterators
-| | Algorithms
+|V| Templated containers
+|V| Iterators
+|V| Algorithms
 |9| -------------------------
-| | STL
+|V| STL
 -----------------------------
-https://github.com/achrafelkhnissi/CPP_Modules/blob/master/Module_09/ex00/BitcoinExchange.cpp
-
-https://github.com/Kuninoto/42_CPP_Modules/blob/master/CPP09/ex00/includes/BitcoinExchange.hpp
-
-github.com/fateemaazaahraae/CPP/blob/main/CPP09/ex00/BitcoinExchange.cpp
-
-https://github.com/ckhater/CPP_modules/blob/main/cpp09/ex00/BitcoinExchange.cpp
-
-https://github.com/Keltoum-Nacer/CPP-09/blob/main/ex00/BitcoinExchange.cpp
-
-https://github.com/bonsthie/cpp/blob/main/cpp09/ex00/Date.h
